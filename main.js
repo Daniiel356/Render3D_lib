@@ -4,6 +4,7 @@ const render=new Render();
 const canvas=render.getElement();
 
 document.body.appendChild(canvas);
+render.resize();
 const program=await render.createProgram("./lib/shaders/source/vertex_2D.glsl", "./lib/shaders/source/fragment_2D.glsl")
 
 render.addGeometry(
