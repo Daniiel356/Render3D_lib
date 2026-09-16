@@ -9,28 +9,28 @@ const program=await render.createProgram("./lib/shaders/source/vertex_2D.glsl", 
 
 render.addGeometry(
     [
-        -0.5,  0.5, 1, 0, 0, 1,
-        -0.5, -0.5, 1, 0, 0, 1,
-         0.5, -0.5, 1, 0, 0, 1,
-         0.5, -0.5, 1, 0, 0, 1,
-         0.5,  0.5, 1, 0, 0, 1,
-        -0.5,  0.5, 1, 0, 0, 1
+        -0.5,  0.5, 0, 1,
+        -0.5, -0.5, 0, 0,
+         0.5, -0.5, 1, 0,
+         0.5, -0.5, 1, 0,
+         0.5,  0.5, 1, 1,
+        -0.5,  0.5, 0, 1
     ],
     [{
         pos: 0,
         size: 2,
         type: "FLOAT",
         normalize: false,
-        stride: 24,
+        stride: 16,
         offset: 0
     },
      {
          pos: 1,
-         size: 4,
+         size: 2,
          type: "FLOAT",
          normalize: false,
          stride: 24,
-         offset: 8
+         offset: 16
      }]
 )
 render.draw(program);
