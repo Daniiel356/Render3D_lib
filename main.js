@@ -29,8 +29,8 @@ render.addGeometry(
          size: 2,
          type: "FLOAT",
          normalize: false,
-         stride: 24,
-         offset: 16
+         stride: 16,
+         offset: 8
      }],
     {
         name: "u_texture",
