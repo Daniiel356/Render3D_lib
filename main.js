@@ -31,6 +31,13 @@ render.addGeometry(
          normalize: false,
          stride: 24,
          offset: 16
-     }]
+     }],
+    {
+        name: "u_texture",
+        value: render.createTexture(
+            render.COLOR_TEXTURE,
+            {r:255, g:0, b:0, a:255}
+        )
+    }
 )
 render.draw(program);
