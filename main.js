@@ -40,4 +40,5 @@ render.addGeometry(
         )
     }
 )
+
 render.draw(program);
