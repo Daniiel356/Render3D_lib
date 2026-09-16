@@ -1,8 +1,9 @@
 #version 300 es
-precision medium float;
+precision mediump float;
 
-out vec3 o_color;
+in vec4 b_color;
+out vec4 out_Color;
 
 void main(){
-    o_color=vec3(1,0,0);
+    out_Color=b_color;
 }
