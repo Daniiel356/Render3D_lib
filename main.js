@@ -17,7 +17,7 @@ const cube=render.createGeometry(
         -0.5,  0.5, 0, 1
     ],
     [{
-        pos: 0,
+        pos: 1,
         size: 2,
         type: "FLOAT",
         normalize: false,
@@ -25,13 +25,14 @@ const cube=render.createGeometry(
         offset: 0
     },
      {
-         pos: 1,
+         pos: 2,
          size: 2,
          type: "FLOAT",
          normalize: false,
          stride: 16,
          offset: 8
      }]
-)
+);
+cube.addInstance([])
 
 render.draw(program);
