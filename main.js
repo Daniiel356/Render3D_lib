@@ -1,12 +1,14 @@
 import {Render} from "/lib/render.js";
 
 const render=new Render();
-const canvas=render.getElement();
+const canvas=render.element;
 
 document.body.appendChild(canvas);
 render.resize();
 const program=await render.createProgram("./lib/shaders/source/vertex_2D.glsl", "./lib/shaders/source/fragment_2D.glsl")
+const textureManager=render.textureManager;
 
+const redTexture=textureManager.add(await textureManager.colorTexture({r:255}));
 const cube=render.createGeometry(
     [
         0, 0,
@@ -29,16 +31,16 @@ const cube=render.createGeometry(
         size: 2,
         type: "FLOAT",
         normalize: false,
-        stride: 0,
+        stride: 16,
         offset: 0,
-    }/*,{
+    },{
          pos: 2,
          size: 2,
          type: "FLOAT",
          normalize: false,
-         stride: 24,
+         stride: 16,
          offset: 8
-     },{
+     }/*,{
          pos: 3,
          size: 2,
          type: "FLOAT",
@@ -48,6 +50,8 @@ const cube=render.createGeometry(
      }*/
     ]
 );
-cube.addInstance([1,1])
+await render.init();
+alert(redTexture.uvs)
+cube.addInstance([-0.25,-0.5, 0.5, 1])
 
 render.draw(program);
