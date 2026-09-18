@@ -7,7 +7,7 @@ document.body.appendChild(canvas);
 render.resize();
 const program=await render.createProgram("./lib/shaders/source/vertex_2D.glsl", "./lib/shaders/source/fragment_2D.glsl")
 
-render.addGeometry(
+const cube=render.createGeometry(
     [
         -0.5,  0.5, 0, 1,
         -0.5, -0.5, 0, 0,
