@@ -9,30 +9,45 @@ const program=await render.createProgram("./lib/shaders/source/vertex_2D.glsl", 
 
 const cube=render.createGeometry(
     [
-        -0.5,  0.5, 0, 1,
-        -0.5, -0.5, 0, 0,
-         0.5, -0.5, 1, 0,
-         0.5, -0.5, 1, 0,
-         0.5,  0.5, 1, 1,
-        -0.5,  0.5, 0, 1
+        0, 0,
+        0, 1,
+        1, 1,
+        0, 0,
+        1, 0,
+        1, 1,
     ],
     [{
+        pos: 0,
+        size: 2,
+        type: "FLOAT",
+        normalize: false,
+        stride: 0,
+        offset: 0,
+        base: true
+    },{
         pos: 1,
         size: 2,
         type: "FLOAT",
         normalize: false,
-        stride: 16,
-        offset: 0
-    },
-     {
+        stride: 0,
+        offset: 0,
+    }/*,{
          pos: 2,
          size: 2,
          type: "FLOAT",
          normalize: false,
-         stride: 16,
+         stride: 24,
          offset: 8
-     }]
+     },{
+         pos: 3,
+         size: 2,
+         type: "FLOAT",
+         normalize: false,
+         stride: 24,
+         offset: 16
+     }*/
+    ]
 );
-cube.addInstance([])
+cube.addInstance([1,1])
 
 render.draw(program);
