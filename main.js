@@ -31,27 +31,27 @@ const cube=render.createGeometry(
         size: 2,
         type: "FLOAT",
         normalize: false,
-        stride: 16,
+        stride: 32,
         offset: 0,
     },{
          pos: 2,
          size: 2,
          type: "FLOAT",
          normalize: false,
-         stride: 16,
+         stride: 32,
          offset: 8
-     }/*,{
+     },{
          pos: 3,
-         size: 2,
+         size: 4,
          type: "FLOAT",
          normalize: false,
-         stride: 24,
+         stride: 32,
          offset: 16
-     }*/
+     }
     ]
 );
 await render.init();
 alert(redTexture.uvs)
-cube.addInstance([-0.25,-0.5, 0.5, 1])
+cube.addInstance([-0.25,-0.5, 0.5, 1, ...redTexture.uvs])
 
 render.draw(program);
