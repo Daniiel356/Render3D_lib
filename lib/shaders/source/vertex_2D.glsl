@@ -10,5 +10,5 @@ out vec2 b_uv;
 void main(){
     vec2 pos=(a_base_pos*a_scale)+a_pos;//(a_base_pos * a_scale) + a_pos;
     gl_Position=vec4(pos, 0.0, 1.0);
-    b_uv=a_uv.xy+(a_uv.zw*a_base_pos);
+    b_uv=a_uv.xy+(a_uv.zw-a_uv.xy)*a_base_pos;
 }
