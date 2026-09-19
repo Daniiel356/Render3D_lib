@@ -5,7 +5,7 @@ const canvas=render.element;
 
 document.body.appendChild(canvas);
 render.resize();
-const program=await render.createProgram("./lib/shaders/source/vertex_2D.glsl", "./lib/shaders/source/fragment_2D.glsl")
+const program=await render.createProgram("./lib/shaders/source/vertex_2D.glsl", "./lib/shaders/source/fragment_2D.glsl", 0)
 const textureManager=render.textureManager;
 
 const redTexture=textureManager.add(await textureManager.colorTexture({r:255}));
