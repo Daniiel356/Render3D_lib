@@ -1,3 +1,4 @@
+alert()
 import {Render} from "/lib/render.js";
 import {Material} from "./lib/engine/material.js";
     
