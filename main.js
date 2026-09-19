@@ -51,7 +51,6 @@ const cube=render.createGeometry(
     ]
 );
 await render.init();
-alert(redTexture.uvs)
 cube.addInstance([-0.25,-0.5, 0.5, 1, ...redTexture.uvs])
 
 render.draw(program);
